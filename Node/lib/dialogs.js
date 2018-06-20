@@ -3,8 +3,8 @@ const builder = require("botbuilder");
 const crypto = require("crypto");
 const consts_1 = require("./consts");
 const defaultOptions = {
-    cancelMatches: /cancel/,
-    reloadMatches: /try again/,
+    cancelMatches: /cancel|cancelar/,
+    reloadMatches: /try again|tratar de nuevo/,
     secret: null
 };
 class AuthDialog extends builder.Dialog {
@@ -43,9 +43,10 @@ class AuthDialog extends builder.Dialog {
             default:
                 msg = new builder.Message(session)
                     .attachments([
-                    new builder.SigninCard(session)
+                    new builder.HeroCard(session)
+			.title('Login')
                         .text("connect_prompt")
-                        .button("connect_button", opt.buttonUrl)
+                        .buttons([ builder.CardAction.openUrl(session, opt.buttonUrl,"connect_button")])
                 ]);
         }
         session.send(msg);

@@ -1,0 +1,7 @@
+{
+    "connect_prompt" : "Iniciar sesión.Puede decir 'cancelar' para regresar sin iniciar sesión.",
+    "connect_button" : "conectar",
+    "unauthorized" : "El codigo que ha ingresado es invalido o la autorzación ha expirado. Por favor intentelo de nuevo, o diga 'cancelar' para no seguir tratando.",
+    "reloaded" : "iniciando de nuevo",
+    "cancelled" : "cancelando la autenticación..."
+}
